@@ -1,2 +1,4 @@
-/multiThreading.iml
-/.idea
+.idea/
+out/
+target
+multiThreading.iml
