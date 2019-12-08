@@ -1,4 +1,4 @@
-package com.epam.examples.logic.impl;
+package com.epam.examples.logic;
 
 import com.epam.examples.bean.Person;
 import com.epam.examples.bean.TradeExchange;
@@ -6,10 +6,10 @@ import com.epam.examples.bean.TradeExchange;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class TradeExchangeActionImpl implements Runnable {
+public class TradeExchangeAction implements Runnable {
     private TradeExchange tradeExchange;
 
-    public TradeExchangeActionImpl(TradeExchange tradeExchange) {
+    public TradeExchangeAction(TradeExchange tradeExchange) {
         this.tradeExchange = tradeExchange;
     }
 
@@ -17,7 +17,7 @@ public class TradeExchangeActionImpl implements Runnable {
     public void run() {
         ExecutorService executorService= Executors.newFixedThreadPool(tradeExchange.getPersons().size());
         for (Person p : tradeExchange.getPersons()) {
-            executorService.submit(new PersonActionImpl(p,
+            executorService.submit(new PersonAction(p,
                     tradeExchange.getBuyCoefficientForEuro(),
                     tradeExchange.getBuyCoefficientForDollar(),
                     tradeExchange.getSellCoefficientForEuro(),

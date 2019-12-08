@@ -1,8 +1,8 @@
 package com.epam.examples.run;
 
 import com.epam.examples.bean.TradeExchange;
-import com.epam.examples.logic.impl.PersonStatistic;
-import com.epam.examples.logic.impl.TradeExchangeActionImpl;
+import com.epam.examples.logic.PersonStatistic;
+import com.epam.examples.logic.TradeExchangeAction;
 
 public class TradeHelper {
     private TradeExchange tradeExchange;
@@ -12,10 +12,9 @@ public class TradeHelper {
     }
 
     public void startTrading() throws InterruptedException {
-        while (true) {
+       // while (true) {
 
-
-            Thread thread = new Thread(new TradeExchangeActionImpl(tradeExchange));
+            Thread thread = new Thread(new TradeExchangeAction(tradeExchange));
             Thread thread1 = new Thread(new PersonStatistic(tradeExchange.getPersons()));
 
 
@@ -24,6 +23,6 @@ public class TradeHelper {
 
             thread.join();
             thread1.join();
-        }
+      //  }
     }
 }

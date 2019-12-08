@@ -1,4 +1,4 @@
-package com.epam.examples.logic.impl;
+package com.epam.examples.logic;
 
 import com.epam.examples.bean.Person;
 
@@ -21,10 +21,11 @@ public class PersonStatistic implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+        System.out.println("_____________________________________");
             for (Person p : list) {
                 System.out.println(p);
             }
-
+        System.out.println("_____________________________________");
 
     }
 }
