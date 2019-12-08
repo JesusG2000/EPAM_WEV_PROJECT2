@@ -1,8 +1,10 @@
 package com.epam.examples.controller;
 
 import com.epam.examples.bean.Person;
+import org.apache.log4j.Logger;
 
 public class Controller implements Runnable {
+    private static Logger log = Logger.getLogger(Controller.class);
     private final CommandProvider commandProvider = new CommandProvider();
     private String request;
     private Person person;
@@ -20,6 +22,7 @@ public class Controller implements Runnable {
     public void run() {
         try {
             Command command = commandProvider.getCommand(request);
+            log.info(person+"\texecute command\t" + request);
             command.execute(person, amount, coefficient);
         } catch (InterruptedException e) {
             e.printStackTrace();
