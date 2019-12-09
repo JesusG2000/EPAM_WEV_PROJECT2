@@ -31,9 +31,13 @@ public class PersonAction implements Runnable {
 
     @Override
     public  void run() {
-        int countOfPersonOperation = (int) (Math.random() * 4);
+        int countOfPersonOperation = 100;
         ExecutorService executorService = Executors.newFixedThreadPool(countOfPersonOperation);
         for (int i = 0; i < countOfPersonOperation; i++) {
+//            executorService.submit(new Controller("BUY_DOLLARS",person,10,buyCoefficientForDollar));
+//            executorService.submit(new Controller("BUY_DOLLARS",person,10,buyCoefficientForDollar));
+//            executorService.submit(new Controller("SELL_DOLLARS",person,10,buyCoefficientForDollar));
+//        }
             int executingCommand = (int) (Math.random() * 4);
             switch (executingCommand) {
                 case 0: {

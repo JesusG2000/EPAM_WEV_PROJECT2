@@ -3,6 +3,7 @@ package com.epam.examples.logic;
 import com.epam.examples.bean.Person;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 
 public class PersonStatistic implements Runnable {
@@ -17,7 +18,7 @@ public class PersonStatistic implements Runnable {
 
 
             try {
-                Thread.sleep(1500);
+                TimeUnit.SECONDS.sleep(4);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
